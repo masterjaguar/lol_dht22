@@ -88,12 +88,13 @@ static int read_dht22_dat()
         if ((dht22_dat[2] & 0x80) != 0)  t *= -1;
 
 
-    printf("Humidity = %.2f %% Temperature = %.2f *C \n", h, t );
+    //printf("Humidity = %.2f %% Temperature = %.2f *C \n", h, t );
+    printf("%.2f %.2f \n", h, t );
     return 1;
   }
   else
   {
-    printf("Data not good, skip\n");
+    //printf("Data not good, skip\n");
     return 0;
   }
 }
@@ -108,7 +109,7 @@ int main (int argc, char *argv[])
     DHTPIN = atoi(argv[1]);
    
 
-  printf ("Raspberry Pi wiringPi DHT22 reader\nwww.lolware.net\n") ;
+  //printf ("Raspberry Pi wiringPi DHT22 reader\nwww.lolware.net\n") ;
 
   lockfd = open_lockfile(LOCKFILE);
 
